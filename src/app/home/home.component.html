@@ -1,11 +1,12 @@
-<div class="col-md-6 col-md-offset-3">
-    <h1>Home</h1>
-    <p>You're logged in with JWT!!</p>
-    <div>
-        Users from secure api end point:
-        <ul>
-            <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
-        </ul>
-    </div>
-    <p><a [routerLink]="['/login']">Logout</a></p>
+<div fxLayout="row layout-wrap" fxFlex="100" fxLayoutAlign="space-between start" *ngIf="gallery; else noData">
+  <div *ngFor="let image of gallery">
+    <a [routerLink]="[image.id]">
+      <img src="{{image.path}}" alt="{{image.name}}">
+    </a>
+  </div>
 </div>
+<ng-template #noData>
+  <div fxLayout="row layout-wrap" fxFlex="100" fxLayoutAlign="space-between start">
+    <div>No data present</div>
+  </div>
+</ng-template>

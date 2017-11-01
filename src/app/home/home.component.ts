@@ -1,23 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user';
-import { UserService } from '../services/user.service';
+import { GalleryService } from '../services/gallery.service';
 
 @Component({
-    moduleId: 'module.id',
-    templateUrl: 'home.component.html'
+  moduleId: 'module.id',
+  templateUrl: 'home.component.html'
 })
 
 export class HomeComponent implements OnInit {
-    users: User[] = [];
+  public gallery: any;
 
-    constructor(private userService: UserService) { }
+  constructor(private galleryService: GalleryService) { }
 
-    ngOnInit() {
-        // get users from secure api end point
-        this.userService.getUsers()
-            .subscribe(users => {
-                this.users = users;
-            });
-    }
+  ngOnInit() {
+    this.getImageList();
+  }
 
+  public getImageList() {
+    this.galleryService.getImageList()
+      .subscribe(results => {
+        this.gallery = results;
+      });
+  }
 }
+
+

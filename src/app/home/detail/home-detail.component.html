@@ -1,0 +1,9 @@
+<div class="col-md-6 col-md-offset-3">
+  <h1>Home Details</h1>
+  <div *ngIf="image; else noImage">
+    <img src="{{image.path}}" alt="{{image.name}}">
+  </div>
+  <ng-template #noImage>
+    <label>No Image Present</label>
+  </ng-template>
+</div>

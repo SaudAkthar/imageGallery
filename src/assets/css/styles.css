@@ -1,4 +1,20 @@
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 body {
-    background: #0147A7;
-    color: #fff;
+    background: white;
+    color: #000000;
 }
+img {
+    height: 200px;
+    max-width:300px;
+}
+/*.image-row{
+        margin-right: 1px;
+        overflow: hidden;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-inline-box;
+        margin: 8px;
+} */
+
